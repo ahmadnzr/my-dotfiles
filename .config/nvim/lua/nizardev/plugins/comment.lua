@@ -1,6 +1,5 @@
-local status, comment = pcall(require, "Comment")
-if not status then
-  return
-end
-
-comment.setup()
+return {
+  "numToStr/Comment.nvim",
+  event = {"BufReadPre", "BufNewFile"},
+  config = true -- run require('Comment').setup
+}
