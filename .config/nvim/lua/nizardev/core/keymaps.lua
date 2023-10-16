@@ -27,3 +27,9 @@ keymap.set("n", "tp", ":tabp<CR>") -- go to previous tab
 keymap.set("n", "<leader>tn", ":tabnew +term<CR>") -- open terminal in new tab
 keymap.set("n", "<leader>ts", ":vsplit +term<CR>") -- open terminal in vertical split
 keymap.set("n", "<leader>th", ":split +term<CR>") -- open terminal in horizontal split
+
+keymap.set("n", "mj", ":m .+1<CR>") -- move current line down one row
+keymap.set("n", "mk", ":m .-2<CR>") -- move current line up one row
+
+keymap.set("n", "fa", "zfa") -- fold arround (follow with surround)
+keymap.set("n", "fi", "zfi") -- fold inner (follow with surround)
