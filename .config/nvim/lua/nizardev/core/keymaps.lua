@@ -31,5 +31,5 @@ keymap.set("n", "<leader>th", ":split +term<CR>") -- open terminal in horizontal
 keymap.set("n", "mj", ":m .+1<CR>") -- move current line down one row
 keymap.set("n", "mk", ":m .-2<CR>") -- move current line up one row
 
-keymap.set("n", "fa", "zfa") -- fold arround (follow with surround)
-keymap.set("n", "fi", "zfi") -- fold inner (follow with surround)
+keymap.set("n", "fa", "zfa") -- fold arround (follow it surround) ex. fat (fold arround tag)
+keymap.set("n", "fi", "zfi") -- fold inner (follow it surround) ex. fit (fold inner tag)
