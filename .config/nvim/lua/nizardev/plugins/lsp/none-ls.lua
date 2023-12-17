@@ -43,6 +43,9 @@ return {
         formatting.stylua, -- lua formatter
         formatting.isort,
         formatting.black,
+        formatting.gofumpt, -- golang formatter
+        formatting.golines, -- golang formatter
+        formatting.goimports_reviser, -- golang formtter
         diagnostics.pylint,
         diagnostics.eslint_d.with({ -- js/ts linter
           condition = function(utils)
