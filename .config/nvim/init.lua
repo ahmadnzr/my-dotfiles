@@ -1,2 +1,3 @@
-require("nizardev.core")
-require("nizardev.lazy")
+require('nizardev.lazy')
+require "nizardev.options"
+require "nizardev.keymaps"

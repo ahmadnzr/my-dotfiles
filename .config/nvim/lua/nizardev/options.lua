@@ -38,3 +38,5 @@ opt.splitbelow = true
 
 opt.iskeyword:append("-")
 
+ -- mouse event
+ opt.mousemoveevent = true
