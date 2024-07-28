@@ -104,4 +104,74 @@ return {
 			return require("nizardev.configs.lint")
 		end,
 	},
+
+	{
+		"nvim-treesitter/nvim-treesitter",
+		event = { "BufReadPre", "BufNewFile" },
+		build = ":TSUpdate",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+			"windwp/nvim-ts-autotag",
+		},
+		config = function()
+			return require("nizardev.configs.treesitter")
+		end,
+	},
+
+	{
+		"windwp/nvim-ts-autotag",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	},
+
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			return require("nizardev.configs.textobj")
+		end,
+	},
+	{
+		"windwp/nvim-autopairs",
+		event = { "InsertEnter" },
+		config = function()
+			return require("nizardev.configs.autopairs")
+		end,
+	},
+	{
+		"kylechui/nvim-surround",
+		event = { "BufReadPre", "BufNewFile" },
+		version = "*",
+		config = true,
+	},
+	{
+		"nvim-telescope/telescope.nvim",
+		branch = "0.1.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			return require("nizardev.configs.telescope")
+		end,
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			-- return require("nizardev.configs.lualine")
+			return require("nizardev.configs.evil_lualine")
+			-- require("lualine").setup()
+		end,
+	},
+	{
+		"lewis6991/gitsigns.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			return require("nizardev.configs.gitsigns")
+		end,
+	},
 }
