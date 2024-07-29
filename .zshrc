@@ -163,6 +163,8 @@ alias scibb-btn="git remote set-url origin https://code.okd.local/ibb/sc-ibb.git
 
 alias brave-disable-security="brave --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security"
 
+alias update-config="cp -rf ~/.zshrc ~/Documents/github-repositories/my-dotfiles/ && cp -rf ~/.tmux.conf ~/Documents/github-repositories/my-dotfiles/ && cp -rf ~/.config/alacritty/ ~/Documents/github-repositories/my-dotfiles/.config/ && cp -rf ~/.config/nvim/ ~/Documents/github-repositories/my-dotfiles/.config/"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
