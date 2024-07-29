@@ -4,6 +4,9 @@ local options = {
 		css = { "prettier" },
 		html = { "prettier" },
 		javascript = { "prettier" },
+		typescript = { "prettier" },
+		javascriptreact = { "prettier" },
+		typescriptreact = { "prettier" },
 	},
 
 	format_on_save = {
