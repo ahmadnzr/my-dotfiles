@@ -115,6 +115,7 @@ alias forti-nizar="sudo openfortivpn -c ~/Documents/github-repositories/__workCo
 alias forti-enroll="sudo openfortivpn -c ~/Documents/github-repositories/__workConfig/ist/openfortivpn/btn_enroll"
 
 alias ovpn-riko="sudo openvpn ~/Documents/github-repositories/__workConfig/ist/vpn/Riko_Orlando.ovpn"
+alias ovpn-nizar="sudo openvpn ~/Documents/github-repositories/__workConfig/ist/vpn/ahmad_nizar.ovpn"
 
 # REPOSITORIES
 alias report="cd ~/Documents/gitlab-repositories/frontend-ibb-report"
