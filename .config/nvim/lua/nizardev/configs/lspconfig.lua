@@ -63,7 +63,7 @@ for type, icon in pairs(signs) do
 end
 
 -- local servers = { "html", "cssls", "tsserver", "tailwindcss", "eslint", "prismals" }
-local servers = { "html", "cssls", "tsserver", "tailwindcss", "prismals" }
+local servers = { "html", "cssls", "ts_ls", "tailwindcss", "prismals" }
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
