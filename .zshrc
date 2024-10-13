@@ -108,59 +108,14 @@ alias myrepo="cd ~/Documents/github-repositories"
 alias workrepo="cd ~/Documents/gitlab-repositories"
 alias myacc="myrepo && cat __workConfig/ist/openfortivpn/ist_nizar"
 
-alias forti-riko="sudo openfortivpn -c ~/Documents/github-repositories/__workConfig/ist/openfortivpn/ist_riko"
-alias forti-qomar="sudo openfortivpn -c ~/Documents/github-repositories/__workConfig/ist/openfortivpn/ist_qomar"
-alias forti-ika="sudo openfortivpn -c ~/Documents/github-repositories/__workConfig/ist/openfortivpn/ist_ika"
 alias forti-nizar="sudo openfortivpn -c ~/Documents/github-repositories/__workConfig/ist/openfortivpn/ist_nizar"
-alias forti-enroll="sudo openfortivpn -c ~/Documents/github-repositories/__workConfig/ist/openfortivpn/btn_enroll"
-
-alias ovpn-riko="sudo openvpn ~/Documents/github-repositories/__workConfig/ist/vpn/Riko_Orlando.ovpn"
-alias ovpn-nizar="sudo openvpn ~/Documents/github-repositories/__workConfig/ist/vpn/ahmad_nizar.ovpn"
-
-# REPOSITORIES
-alias report="cd ~/Documents/gitlab-repositories/frontend-ibb-report"
-alias report-dev="git remote set-url origin https://code.mylabzolution.com/digital-banking/frontend-ibb-report.git"
-alias report-btn="git remote set-url origin https://code.okd.local/ibb/frontend-ibb-report.git"
 
 alias other="cd ~/Documents/gitlab-repositories/frontend-ibb-others"
 alias other-dev="git remote set-url origin https://code.mylabzolution.com/digital-banking/frontend-ibb-others.git"
 alias other-btn="git remote set-url origin https://code.okd.local/ibb/frontend-ibb-others.git"
 
-alias autocollection="cd ~/Documents/gitlab-repositories/frontend-ibb-auto-collection"
-alias autocollection-dev="git remote set-url origin https://code.mylabzolution.com/digital-banking/frontend-ibb-auto-collection.git"
-alias autocollection-btn="git remote set-url origin https://code.okd.local/ibb/frontend-ibb-auto-collection.git"
-
-alias submission="cd ~/Documents/gitlab-repositories/frontend-ibb-submission"
-alias submission-dev="git remote set-url origin https://code.mylabzolution.com/digital-banking/frontend-ibb-submission.git"
-alias submission-btn="git remote set-url origin https://code.okd.local/ibb/frontend-ibb-submission.git"
-
-alias service="cd ~/Documents/gitlab-repositories/frontend-ibb-services"
-alias service-dev="git remote set-url origin https://code.mylabzolution.com/digital-banking/frontend-ibb-services.git"
-alias service-btn="git remote set-url origin https://code.okd.local/ibb/frontend-ibb-services.git"
-
-alias dashboard="cd ~/Documents/gitlab-repositories/frontend-ibb-dashboard"
-alias dashboard-dev="git remote set-url origin https://code.mylabzolution.com/digital-banking/frontend-ibb-dashboard.git"
-alias dashboard-btn="git remote set-url origin https://code.okd.local/ibb/frontend-ibb-dashboard.git"
-
-alias information="cd ~/Documents/gitlab-repositories/frontend-ibb-information"
-alias information-dev="git remote set-url origin https://code.mylabzolution.com/digital-banking/frontend-ibb-information.git"
-alias informtion-btn="git remote set-url origin https://code.okd.local/ibb/frontend-ibb-information.git"
-
-alias login="cd ~/Documents/gitlab-repositories/frontend-ibb-login"
-alias login-dev="git remote set-url origin https://code.mylabzolution.com/digital-banking/frontend-ibb-login.git"
-alias login-btn="git remote set-url origin https://code.okd.local/ibb/frontend-ibb-login.git"
-
-alias payment="cd ~/Documents/gitlab-repositories/frontend-ibb-payment"
-alias payment-dev="git remote set-url origin https://code.mylabzolution.com/digital-banking/frontend-ibb-payment.git"
-alias payment-btn="git remote set-url origin https://code.okd.local/ibb/frontend-ibb-payment.git"
-
-alias purchase="cd ~/Documents/gitlab-repositories/frontend-ibb-purchase"
-alias purchase-dev="git remote set-url origin https://code.mylabzolution.com/digital-banking/frontend-ibb-purchase.git"
-alias purchase-btn="git remote set-url origin https://code.okd.local/ibb/frontend-ibb-purchase.git"
-
-alias scibb="cd ~/Documents/gitlab-repositories/sc-ibb"
-alias scibb-dev="git remote set-url origin https://code.mylabzolution.com/digital-banking/sc-ibb.git"
-alias scibb-btn="git remote set-url origin https://code.okd.local/ibb/sc-ibb.git"
+alias py2="sudo rm /usr/bin/python && sudo ln -s /usr/bin/python2 /usr/bin/python"
+alias py3="sudo rm /usr/bin/python && sudo ln -s /usr/bin/python3 /usr/bin/python"
 
 alias brave-disable-security="brave --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security"
 
