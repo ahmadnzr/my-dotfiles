@@ -174,4 +174,12 @@ return {
 			return require("nizardev.configs.gitsigns")
 		end,
 	},
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = { "InsertEnter" },
+		config = function()
+			return require("nizardev.configs.copilot")
+		end,
+	},
 }
