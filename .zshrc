@@ -114,13 +114,19 @@ alias other="cd ~/Documents/gitlab-repositories/frontend-ibb-others"
 alias other-dev="git remote set-url origin https://code.mylabzolution.com/digital-banking/frontend-ibb-others.git"
 alias other-btn="git remote set-url origin https://code.okd.local/ibb/frontend-ibb-others.git"
 
+alias onboarding="nvm use 20 && cd ~/Documents/gitlab-repositories/nextjs-admiral"
+alias kpp="nvm use 20 && cd ~/Documents/gitlab-repositories/invent-frontend"
+alias admiral="nvm use 20 && cd ~/Documents/gitlab-repositories/admiral"
+alias nizardev="nvm use 20 && cd ~/Documents/github-repositories/nizardev"
+
 alias py2="sudo rm /usr/bin/python && sudo ln -s /usr/bin/python2 /usr/bin/python"
 alias py3="sudo rm /usr/bin/python && sudo ln -s /usr/bin/python3 /usr/bin/python"
 
 alias brave-disable-security="brave --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security"
 
-alias update-config="cp -rf ~/.zshrc ~/Documents/github-repositories/my-dotfiles/ && cp -rf ~/.tmux.conf ~/Documents/github-repositories/my-dotfiles/ && cp -rf ~/.config/alacritty/ ~/Documents/github-repositories/my-dotfiles/.config/ && cp -rf ~/.config/nvim/ ~/Documents/github-repositories/my-dotfiles/.config/"
+alias update-config="cp -rf ~/.zshrc ~/Documents/github-repositories/my-dotfiles/ && cp -rf ~/.tmux.conf ~/Documents/github-repositories/my-dotfiles/ && cp -rf ~/.config/alacritty/ ~/Documents/github-repositories/my-dotfiles/.config/ && cp -rf ~/.config/nvim/ ~/Documents/github-repositories/my-dotfiles/.config/ && ~/Documents/github-repositories/my-dotfiles/.config/"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export GPG_TTY=$(tty)
