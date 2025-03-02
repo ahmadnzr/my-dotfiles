@@ -116,6 +116,8 @@ alias other-btn="git remote set-url origin https://code.okd.local/ibb/frontend-i
 
 alias onboarding="nvm use 20 && cd ~/Documents/gitlab-repositories/nextjs-admiral"
 alias kpp="nvm use 20 && cd ~/Documents/gitlab-repositories/invent-frontend"
+alias vite-admiral="nvm use 20 && cd ~/Documents/gitlab-repositories/vite-admiral"
+alias ai-proto="nvm use 20 && cd ~/Documents/gitlab-repositories/ai-prototype-project"
 alias admiral="nvm use 20 && cd ~/Documents/gitlab-repositories/admiral"
 alias nizardev="nvm use 20 && cd ~/Documents/github-repositories/nizardev"
 
