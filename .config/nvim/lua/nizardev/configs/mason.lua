@@ -20,6 +20,7 @@ mason_lspconfig.setup({
 		"html",
 		"cssls",
 		"tailwindcss",
+		"eslint",
 		"lua_ls",
 		-- "graphql",
 		-- "emmet_ls",
@@ -36,5 +37,6 @@ mason_tool_installer.setup({
 		"prettier", -- prettier formatter
 		"stylua", -- lua formatter
 		"eslint_d", -- js linter
+		"eslint",
 	},
 })

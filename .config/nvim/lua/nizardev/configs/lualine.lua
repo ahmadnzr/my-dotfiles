@@ -60,7 +60,6 @@ lualine.setup({
 			{ "encoding" },
 			{ "fileformat" },
 			{ "filetype" },
-			"rest",
 		},
 	},
 })

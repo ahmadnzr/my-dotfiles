@@ -63,7 +63,7 @@ for type, icon in pairs(signs) do
 end
 
 -- local servers = { "html", "cssls", "tsserver", "tailwindcss", "eslint", "prismals" }
-local servers = { "html", "cssls", "ts_ls", "tailwindcss", "prismals" }
+local servers = { "html", "cssls", "ts_ls", "tailwindcss", "prismals", "eslint" }
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
@@ -71,6 +71,16 @@ for _, lsp in ipairs(servers) do
 		capabilities = capabilities,
 	})
 end
+
+lspconfig["eslint"].setup({
+	on_attach = function(client, bufnr)
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			buffer = bufnr,
+			command = "EslintFixAll",
+		})
+	end,
+	root_dir = lspconfig.util.root_pattern(".eslintrc.js", ".eslintrc.json", "package.json"),
+})
 
 -- configure tailwindcss server
 lspconfig["tailwindcss"].setup({
