@@ -183,6 +183,15 @@ return {
 		end,
 	},
 	{
+		"zbirenbaum/copilot-cmp",
+		event = { "InsertEnter", "LspAttach" },
+		fix_pairs = true,
+		cmd = "Copilot",
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+	},
+	{
 		"rest-nvim/rest.nvim",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
