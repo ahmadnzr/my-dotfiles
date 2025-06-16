@@ -15,7 +15,7 @@ local on_attach = function(_, bufnr)
 	keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
 	opts.desc = "Go to declaration"
-	keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+	keymap.set("n", "gd", vim.lsp.buf.definition, opts) -- go to declaration
 
 	opts.desc = "Show LSP definitions"
 	keymap.set("n", "sd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
@@ -39,10 +39,14 @@ local on_attach = function(_, bufnr)
 	keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
 	opts.desc = "Go to previous diagnostic"
-	keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
+	keymap.set("n", "[d", function()
+		vim.diagnostic.jump({ count = -1, float = true })
+	end, opts) -- jump to previous diagnostic in buffer
 
 	opts.desc = "Go to next diagnostic"
-	keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+	keymap.set("n", "]d", function()
+		vim.diagnostic.jump({ count = 1, float = true })
+	end, opts) -- jump to next diagnostic in buffer
 
 	opts.desc = "Show documentation for what is under cursor"
 	keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
@@ -55,24 +59,24 @@ end
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- Change the Diagnostic symbols in the sign column (gutter)
--- (not in youtube nvim video)
+
 local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
--- local servers = { "html", "cssls", "tsserver", "tailwindcss", "eslint", "prismals" }
 local servers = { "html", "cssls", "ts_ls", "tailwindcss", "prismals", "eslint" }
 
 for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup({
+	vim.lsp.config(lsp, {
 		on_attach = on_attach,
 		capabilities = capabilities,
 	})
 end
 
-lspconfig["eslint"].setup({
+-- configure eslint server
+vim.lsp.config("eslint", {
 	on_attach = function(client, bufnr)
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			buffer = bufnr,
@@ -83,7 +87,7 @@ lspconfig["eslint"].setup({
 })
 
 -- configure tailwindcss server
-lspconfig["tailwindcss"].setup({
+vim.lsp.config("tailwindcss", {
 	settings = {
 		tailwindCSS = {
 			experimental = {
@@ -97,7 +101,7 @@ lspconfig["tailwindcss"].setup({
 })
 
 -- configure lua server (with special settings)
-lspconfig["lua_ls"].setup({
+vim.lsp.config("lua_ls", {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = { -- custom settings for lua
