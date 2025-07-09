@@ -27,3 +27,14 @@ keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy fin
 keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find file buffers in cwd" })
+
+keymap.set("n", "<leader>bb", "<cmd>Telescope builtin<cr>", { desc = "" })
+
+keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { desc = "" })
+keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", { desc = "" })
+keymap.set("n", "<leader>gt", "<cmd>Telescope git_stash<cr>", { desc = "" })
+
+keymap.set("n", "<leader>km", "<cmd>Telescope keymaps<cr>", { desc = "" })
+
+keymap.set("n", "<leader>sc", "<cmd>Telescope keymaps<cr>", { desc = "" })
+
