@@ -69,14 +69,11 @@ end
 local servers = { "html", "cssls", "ts_ls", "prismals" }
 
 for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup({
-		on_attach = on_attach,
-		capabilities = capabilities,
-	})
+	vim.lsp.config(lsp, { on_attach = on_attach, capabilities = capabilities })
 end
 
 -- configure eslint server
-lspconfig.eslint.setup({
+vim.lsp.config("eslint", {
 	on_attach = function(client, bufnr)
 		on_attach(client, bufnr)
 		vim.api.nvim_create_autocmd("BufWritePre", {
@@ -89,7 +86,7 @@ lspconfig.eslint.setup({
 })
 
 -- configure tailwindcss server
-lspconfig.tailwindcss.setup({
+vim.lsp.config("tailwindcss", {
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
@@ -105,7 +102,7 @@ lspconfig.tailwindcss.setup({
 })
 
 -- configure lua server (with special settings)
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = { -- custom settings for lua
@@ -124,4 +121,3 @@ lspconfig.lua_ls.setup({
 		},
 	},
 })
-
