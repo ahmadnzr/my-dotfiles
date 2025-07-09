@@ -83,7 +83,7 @@ vim.lsp.config("eslint", {
 			command = "EslintFixAll",
 		})
 	end,
-	root_dir = lspconfig.util.root_pattern(".eslintrc.js", ".eslintrc.json", "package.json"),
+	root_dir = lspconfig.util.root_pattern("eslint.config.mjs", ".eslintrc.js", ".eslintrc.json", "package.json"),
 })
 
 -- configure tailwindcss server

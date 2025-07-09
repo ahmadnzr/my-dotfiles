@@ -42,7 +42,7 @@ cmp.setup({
 	-- sources for autocompletion
 	sources = cmp.config.sources({
 		-- Copilot Source
-		{ name = "copilot", group_index = 2 },
+		-- { name = "copilot", group_index = 2 },
 		-- Other Source
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" }, -- snippets
@@ -61,7 +61,7 @@ cmp.setup({
 	sorting = {
 		priority_weight = 2,
 		comparators = {
-			require("copilot_cmp.comparators").prioritize,
+			-- require("copilot_cmp.comparators").prioritize,
 
 			-- Below is the default comparitor list and order for nvim-cmp
 			cmp.config.compare.offset,
