@@ -127,13 +127,6 @@ return {
 	},
 
 	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			return require("nizardev.configs.textobj")
-		end,
-	},
-	{
 		"windwp/nvim-autopairs",
 		event = { "InsertEnter" },
 		config = function()
@@ -162,9 +155,7 @@ return {
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
-			-- return require("nizardev.configs.lualine")
 			return require("nizardev.configs.evil_lualine")
-			-- require("lualine").setup()
 		end,
 	},
 	{
@@ -174,23 +165,6 @@ return {
 			return require("nizardev.configs.gitsigns")
 		end,
 	},
-	-- {
-	-- 	"zbirenbaum/copilot.lua",
-	-- 	cmd = "Copilot",
-	-- 	event = { "InsertEnter" },
-	-- 	config = function()
-	-- 		return require("nizardev.configs.copilot")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"zbirenbaum/copilot-cmp",
-	-- 	event = { "InsertEnter", "LspAttach" },
-	-- 	fix_pairs = true,
-	-- 	cmd = "Copilot",
-	-- 	config = function()
-	-- 		require("copilot_cmp").setup()
-	-- 	end,
-	-- },
 	{
 		"rest-nvim/rest.nvim",
 		dependencies = {
@@ -210,20 +184,7 @@ return {
 		version = false, -- Never set this value to "*"! Never!
 		---@module 'avante'
 		---@type avante.Config
-		opts = {
-			-- add any opts here
-			-- for example
-			provider = "gemini",
-			providers = {
-				gemini = {
-					model = "gemini-2.5-pro",
-					-- model = "gemini-1.5-flash", -- Example of using a different model
-					temperature = 0,
-					max_tokens = 4096,
-					-- endpoint = "https://generativelanguage.googleapis.com/v1beta/models",  -- Optional endpoint
-				},
-			},
-		},
+		opts = require("nizardev.configs.avante"),
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",

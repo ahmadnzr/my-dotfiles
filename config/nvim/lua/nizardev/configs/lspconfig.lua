@@ -66,28 +66,32 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
-local servers = { "html", "cssls", "ts_ls", "tailwindcss", "prismals", "eslint" }
+local servers = { "html", "cssls", "ts_ls", "prismals" }
 
 for _, lsp in ipairs(servers) do
-	vim.lsp.config(lsp, {
+	lspconfig[lsp].setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
 	})
 end
 
 -- configure eslint server
-vim.lsp.config("eslint", {
+lspconfig.eslint.setup({
 	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			buffer = bufnr,
 			command = "EslintFixAll",
 		})
 	end,
+	capabilities = capabilities,
 	root_dir = lspconfig.util.root_pattern("eslint.config.mjs", ".eslintrc.js", ".eslintrc.json", "package.json"),
 })
 
 -- configure tailwindcss server
-vim.lsp.config("tailwindcss", {
+lspconfig.tailwindcss.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 	settings = {
 		tailwindCSS = {
 			experimental = {
@@ -101,7 +105,7 @@ vim.lsp.config("tailwindcss", {
 })
 
 -- configure lua server (with special settings)
-vim.lsp.config("lua_ls", {
+lspconfig.lua_ls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = { -- custom settings for lua
@@ -120,3 +124,4 @@ vim.lsp.config("lua_ls", {
 		},
 	},
 })
+
