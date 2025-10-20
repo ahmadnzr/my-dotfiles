@@ -85,11 +85,11 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# export ARCHFLAGS="-arch $(uname -m)"
 
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
@@ -106,15 +106,8 @@ source $ZSH/oh-my-zsh.sh
 alias start="startxfce4"
 alias myrepo="cd ~/Documents/github-repositories"
 alias workrepo="cd ~/Documents/gitlab-repositories"
-alias myacc="myrepo && cat __workConfig/ist/openfortivpn/ist_nizar"
 
-alias forti-nizar="sudo openfortivpn -c ~/Documents/github-repositories/__workConfig/ist/openfortivpn/ist_nizar"
 
-alias other="cd ~/Documents/gitlab-repositories/frontend-ibb-others"
-alias other-dev="git remote set-url origin https://code.mylabzolution.com/digital-banking/frontend-ibb-others.git"
-alias other-btn="git remote set-url origin https://code.okd.local/ibb/frontend-ibb-others.git"
-
-alias onboarding="nvm use 20 && cd ~/Documents/gitlab-repositories/nextjs-admiral"
 alias kpp="nvm use 20 && cd ~/Documents/gitlab-repositories/invent-frontend"
 alias vite-admiral="nvm use 20 && cd ~/Documents/gitlab-repositories/vite-admiral"
 alias ai-proto="nvm use 20 && cd ~/Documents/gitlab-repositories/ai-prototype-project"
@@ -128,7 +121,10 @@ alias brave-disable-security="brave --user-data-dir=/tmp/temporary-chrome-profil
 
 alias update-config="cp -rf ~/.zshrc ~/Documents/github-repositories/my-dotfiles/ && cp -rf ~/.tmux.conf ~/Documents/github-repositories/my-dotfiles/ && cp -rf ~/.config/alacritty/ ~/Documents/github-repositories/my-dotfiles/.config/ && cp -rf ~/.config/nvim/ ~/Documents/github-repositories/my-dotfiles/.config/ && ~/Documents/github-repositories/my-dotfiles/.config/"
 
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export GPG_TTY=$(tty)
+
+eval "$(starship init zsh)"
+
